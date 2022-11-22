@@ -27,7 +27,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:noHistory="true"
+            android:noHistory="false"
             android:name=".MapActivity"
             android:exported="false">
             <meta-data
@@ -35,8 +35,16 @@
                 android:value="" />
         </activity>
         <activity
-            android:noHistory="true"
+            android:noHistory="false"
             android:name=".ProfileActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:noHistory="false"
+            android:name=".MapActivityD"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
