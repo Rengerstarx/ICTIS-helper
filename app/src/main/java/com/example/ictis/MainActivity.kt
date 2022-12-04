@@ -3,26 +3,25 @@ package com.example.ictis
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.ScrollView
 import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
-import android.app.FragmentManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.ictis.databinding.ActivityMainBinding
 
 
-open class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(){
 
     private lateinit var binding: ActivityMainBinding
+    private val dataModel: DataModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
         binding=ActivityMainBinding.inflate(layoutInflater)
+        dataModel.message.observe(this,{
+
+        })
         setContentView(binding.root)
         replaceFragmentB(InfoBlock())
         binding.bottomNavigationView.setOnItemSelectedListener {
@@ -54,23 +53,4 @@ open class MainActivity : AppCompatActivity() {
         this@MainActivity.startActivity(myIntent)
     }
 
-    fun InfoOpen(view: android.view.View){
-        if(view.id==findViewById<Button>(R.id.War).id){
-            supportFragmentManager.beginTransaction().replace(R.id.BAZA, War()).addToBackStack(null).commit()
-        }
-        else if(view.id==findViewById<Button>(R.id.Spravki).id){
-            supportFragmentManager.beginTransaction().replace(R.id.BAZA, Spravki()).addToBackStack(null).commit()
-        }
-        else if(view.id==findViewById<Button>(R.id.FellowShip).id){
-            supportFragmentManager.beginTransaction().replace(R.id.BAZA, Fellowship()).addToBackStack(null).commit()
-        }
-        else if(view.id==findViewById<Button>(R.id.Dominotry).id){
-            supportFragmentManager.beginTransaction().replace(R.id.BAZA, Dominotry()).addToBackStack(null).commit()
-        }
-    }
-
-    fun DinamicInfoBloks(view: android.view.View){
-        supportFragmentManager.beginTransaction().replace(R.id.BAZA, Article()).addToBackStack(null).commit()
-
-    }
 }
