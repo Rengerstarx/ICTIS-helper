@@ -41,6 +41,15 @@ class ArticleAdapter(val listener: Listener): RecyclerView.Adapter<ArticleAdapte
         notifyDataSetChanged()
     }
 
+    fun deleter(){
+        var t=ArticleList.size
+        var h=0
+        while(h<t){
+             ArticleList.removeAt(0)
+            h+=1
+        }
+    }
+
     interface Listener{
         fun onClick(artic: Article)
     }

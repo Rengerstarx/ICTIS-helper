@@ -14,6 +14,7 @@
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan"
             android:noHistory="true"
             android:exported="true">
             <intent-filter>
@@ -29,6 +30,7 @@
         <activity
             android:noHistory="false"
             android:name=".MapActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -37,6 +39,7 @@
         <activity
             android:noHistory="false"
             android:name=".ProfileActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -45,6 +48,7 @@
         <activity
             android:noHistory="false"
             android:name=".MapActivityD"
+            android:windowSoftInputMode="stateHidden|adjustPan"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

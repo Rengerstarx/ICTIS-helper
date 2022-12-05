@@ -17,6 +17,7 @@ class BlockAdapter(val listener: Listener): RecyclerView.Adapter<BlockAdapter.Bl
             BlockName.setOnClickListener{
                 listener.onClick(block)
             }
+
         }
     }
 

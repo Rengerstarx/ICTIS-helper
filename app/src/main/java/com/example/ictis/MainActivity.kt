@@ -3,12 +3,21 @@ package com.example.ictis
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.SpannableStringBuilder
+import android.view.View
+import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ictis.databinding.ActivityMainBinding
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
+import kotlin.system.exitProcess
 
 
 class MainActivity : AppCompatActivity(){
@@ -41,6 +50,8 @@ class MainActivity : AppCompatActivity(){
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.BAZA,fragment)
         fragmentTransaction.commit()
+
+
     }
     fun replaceFragmentM(fragment: Fragment){
         val myIntent = Intent(this@MainActivity, MapActivity::class.java)
@@ -51,6 +62,20 @@ class MainActivity : AppCompatActivity(){
         val myIntent = Intent(this@MainActivity, ProfileActivity::class.java)
         myIntent.putExtra("key", android.R.attr.value) //Optional parameters
         this@MainActivity.startActivity(myIntent)
+    }
+
+    fun closerFindPanel(view:View){
+        findViewById<RecyclerView>(R.id.rcView3).visibility=View.GONE
+        findViewById<EditText>(R.id.poisk).text=SpannableStringBuilder("Поиск...")
+    }
+
+    fun Poisk(view:View){
+        findViewById<RecyclerView>(R.id.rcView3).visibility=View.VISIBLE
+        findViewById<EditText>(R.id.poisk).text=SpannableStringBuilder("")
+    }
+
+    fun close (view: View){
+        replaceFragmentB(InfoBlock())
     }
 
 }
