@@ -13,9 +13,14 @@
         android:theme="@style/Theme.ICTIS"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
-            android:windowSoftInputMode="stateHidden|adjustPan"
-            android:noHistory="true"
+            android:name=".RegisterActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".SignIn"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,28 +33,37 @@
                 android:value="" />
         </activity>
         <activity
-            android:noHistory="false"
+            android:name=".MainActivity"
+            android:exported="true"
+            android:noHistory="true"
+            android:windowSoftInputMode="stateHidden|adjustPan">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".MapActivity"
-            android:windowSoftInputMode="stateHidden|adjustPan"
-            android:exported="false">
+            android:exported="false"
+            android:noHistory="false"
+            android:windowSoftInputMode="stateHidden|adjustPan">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:noHistory="false"
             android:name=".ProfileActivity"
-            android:windowSoftInputMode="stateHidden|adjustPan"
-            android:exported="false">
+            android:exported="false"
+            android:noHistory="false"
+            android:windowSoftInputMode="stateHidden|adjustPan">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:noHistory="false"
             android:name=".MapActivityD"
-            android:windowSoftInputMode="stateHidden|adjustPan"
-            android:exported="false">
+            android:exported="false"
+            android:noHistory="false"
+            android:windowSoftInputMode="stateHidden|adjustPan">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

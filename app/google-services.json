@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "683066078330-b1k3gh7m6l8i4scp2v6oa6ttia97br7o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ictis",
+            "certificate_hash": "647c4c925c0d834f608af00ed0211d9f1d774af3"
+          }
+        },
+        {
           "client_id": "683066078330-810ujc4qiil1pssd9r6mubkchilamcjg.apps.googleusercontent.com",
           "client_type": 3
         }
