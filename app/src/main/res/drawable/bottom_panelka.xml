@@ -6,18 +6,26 @@
     android:viewportWidth="364"
     android:viewportHeight="64"
     >
+
     <group>
+
         <clip-path
             android:pathData="M21 2H343C353.493 2 362 10.5066 362 21V43C362 53.4934 353.493 62 343 62H21C10.5066 62 2 53.4934 2 43V21C2 10.5066 10.5066 2 21 2Z"
             />
+
         <path
             android:pathData="M2 2V62H362V2"
             android:fillColor="#EAEBEA"
             />
+
     </group>
+
     <group>
+
         <clip-path
             android:pathData="M0 0V64H364V0M21 2H343C353.493 2 362 10.5066 362 21V43C362 53.4934 353.493 62 343 62H21C10.5066 62 2 53.4934 2 43V21C2 10.5066 10.5066 2 21 2Z"
             />
+
     </group>
+
 </vector>

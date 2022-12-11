@@ -3,6 +3,7 @@ package com.example.ictis
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.speech.tts.TextToSpeech
 import android.text.SpannableStringBuilder
 import android.view.View
 import android.widget.Button
@@ -75,6 +76,10 @@ class MainActivity : AppCompatActivity(){
     }
 
     fun close (view: View){
+        replaceFragmentB(InfoBlock())
+    }
+
+    fun back(view: View){
         replaceFragmentB(InfoBlock())
     }
 

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.LifecycleOwner
@@ -28,6 +29,7 @@ class ArticleList : Fragment(), ArticleAdapter.Listener {
         dataModel.message.observe(activity as LifecycleOwner) {
             l=it
         }
+        view.findViewById<TextView>(R.id.textBlock).text=l
         view.findViewById<RecyclerView>(R.id.rcView2).layoutManager = LinearLayoutManager(context)
         view.findViewById<RecyclerView>(R.id.rcView2).adapter=adapter
         Firebase.database.getReference("Article").child("CountS").get().addOnSuccessListener {
@@ -47,7 +49,6 @@ class ArticleList : Fragment(), ArticleAdapter.Listener {
         }
         return view
     }
-
 
     override fun onClick(artic: Article) {
         adapter.deleter()
