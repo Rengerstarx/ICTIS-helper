@@ -29,9 +29,7 @@ class MainActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding=ActivityMainBinding.inflate(layoutInflater)
-        dataModel.message.observe(this,{
-
-        })
+        dataModel.message.observe(this,{})
         setContentView(binding.root)
         replaceFragmentB(InfoBlock())
         binding.bottomNavigationView.setOnItemSelectedListener {
@@ -65,19 +63,34 @@ class MainActivity : AppCompatActivity(){
         this@MainActivity.startActivity(myIntent)
     }
 
-    fun closerFindPanel(view:View){
-        findViewById<RecyclerView>(R.id.rcView3).visibility=View.GONE
-        findViewById<EditText>(R.id.poisk).text=SpannableStringBuilder("Поиск...")
-    }
-
-    fun Poisk(view:View){
-        findViewById<RecyclerView>(R.id.rcView3).visibility=View.VISIBLE
-        findViewById<EditText>(R.id.poisk).text=SpannableStringBuilder("")
-    }
-
-    fun close (view: View){
-        replaceFragmentB(InfoBlock())
-    }
+   /* fun Poisk(view:View){
+        view.findViewById<RecyclerView>(R.id.rcView3).layoutManager = LinearLayoutManager()
+        view.findViewById<RecyclerView>(R.id.rcView3).adapter=adapter2
+        if (findViewById<RecyclerView>(R.id.rcView2).visibility == View.VISIBLE) {
+            adapter2.deleter()
+            findViewById<RecyclerView>(R.id.rcView2).visibility = View.GONE
+        } else {
+            findViewById<RecyclerView>(R.id.rcView2).visibility = View.VISIBLE
+            Firebase.database.getReference("Article").child("CountS").get()
+                .addOnSuccessListener {
+                    var t = it.value.toString().toInt()
+                    var h = 0
+                    var str = findViewById<EditText>(R.id.poisk).text.toString()
+                    while (h <= t) {
+                        var p = h
+                        Firebase.database.getReference("Article").child("Stati")
+                            .child("s" + h.toString()).child("name").get()
+                            .addOnSuccessListener {
+                                if (it.value.toString().contains(str, ignoreCase = true)) {
+                                    h = p
+                                    //adapter2.articFoundCrate(ArticleFound(p,it.value.toString(),p))
+                                }
+                            }
+                        h += 1
+                    }
+                }
+        }
+    }*/
 
     fun back(view: View){
         replaceFragmentB(InfoBlock())

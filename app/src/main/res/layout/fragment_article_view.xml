@@ -15,13 +15,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:onClick="close"
-            android:id="@+id/button3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/GreenBase"
-            android:text="Назад" />
+        <ImageButton
+            android:id="@+id/backBut"
+            android:layout_width="43dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#00FFFFFF"
+            android:onClick="back"
+            android:scaleType="fitXY"
+            android:src="@drawable/nazad"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.545"  />
 
         <ImageButton
             android:id="@+id/VoiceButton"
@@ -69,7 +77,7 @@
                 android:fontFamily="@font/philosopher"
                 android:text=""
                 android:textAlignment="center"
-                android:textColor="#335153"
+                android:textColor="#1CAB6B"
                 android:textSize="25sp" />
 
             <TextView
