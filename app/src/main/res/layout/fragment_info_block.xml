@@ -43,11 +43,11 @@
             android:id="@+id/poisk"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:hint="Поиск..."
             android:fontFamily="@font/philosopher"
+            android:hint="Поиск..."
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/poiskButton"
+            app:layout_constraintEnd_toStartOf="@+id/idIVMic"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -61,6 +61,17 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/idIVMic"
+            android:layout_width="55dp"
+            android:layout_height="0dp"
+            android:background="#00FFFFFF"
+            android:src="@drawable/ic_baseline_mic_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/poiskButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/GreenBaseNew" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
