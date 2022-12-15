@@ -1,5 +1,20 @@
 <resources>
     <string name="app_name">ICTIS</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string-array name="курсы">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+    <string-array name="группы">
+        <item>Ктбо2-7</item>
+        <item>Ктбо2-8</item>
+        <item>Ктбо2-9</item>
+        <item>Ктбо2-10</item>
+        <item>Ктбо2-11</item>
+        <item>Ктбо2-12</item>
+    </string-array>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

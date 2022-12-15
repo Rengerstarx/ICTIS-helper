@@ -54,7 +54,7 @@ class RegisterActivity : AppCompatActivity() {
                     //успешный ввод, переход к main activity
                     Toast.makeText(baseContext, "Authentication Success.",
                         Toast.LENGTH_SHORT).show()
-                    startActivity(Intent(this, MainActivity::class.java))
+                    startActivity(Intent(this, SecondRegister::class.java))
 
                 } else {
                     // If sign in fails, display a message to the user.

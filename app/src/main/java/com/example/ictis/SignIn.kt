@@ -1,18 +1,14 @@
 package com.example.ictis
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.EditText
-import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
-import com.example.ictis.RegisterActivity
-import com.example.ictis.MainActivity
-import com.example.ictis.R
+import androidx.appcompat.app.AppCompatActivity
 import com.example.ictis.databinding.ActivitySignInBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -21,7 +17,10 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+
 
 class SignIn : AppCompatActivity() {
     lateinit var launcher: ActivityResultLauncher<Intent>
@@ -29,7 +28,6 @@ class SignIn : AppCompatActivity() {
     lateinit var binding: ActivitySignInBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
         //-----проверка вошел ли пользователь-------
@@ -124,7 +122,7 @@ class SignIn : AppCompatActivity() {
         auth.signInWithCredential(credential).addOnCompleteListener{
             if (it.isSuccessful){
                 Log.d("MyLog", "Success!")
-                startActivity(Intent(this, MainActivity::class.java))
+                    startActivity(Intent(this, SecondRegister::class.java))
             }
             else{
                 Log.d("MyLog", "Error!")
