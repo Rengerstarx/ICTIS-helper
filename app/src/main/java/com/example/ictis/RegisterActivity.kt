@@ -22,11 +22,7 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(R.layout.activity_register)
         auth = Firebase.auth
         //---------переход между активностями-------
-        val logintext: TextView = findViewById(R.id.loginrnowbutton)
-        logintext.setOnClickListener {
-            val intent =  Intent(this, SignIn::class.java)
-            startActivity(intent)
-        }
+
         //-------------------------------------------
         val registerButton: TextView = findViewById(R.id.regButton)
         registerButton.setOnClickListener{
@@ -67,5 +63,11 @@ class RegisterActivity : AppCompatActivity() {
                     .show()
             }
 
+    }
+
+    override fun onBackPressed() {
+        val myIntent = Intent(this@RegisterActivity, SignIn::class.java)
+        myIntent.putExtra("key", android.R.attr.value) //Optional parameters
+        this@RegisterActivity.startActivity(myIntent)
     }
 }
