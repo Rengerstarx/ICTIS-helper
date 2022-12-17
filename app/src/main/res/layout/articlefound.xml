@@ -15,9 +15,15 @@
 
         <TextView
             android:id="@+id/NameOfArtic"
-            android:textColor="@color/TextColor"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fontFamily="@font/philosopher" />
+            android:fontFamily="@font/philosopher"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="321321"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -30,6 +30,9 @@ class ProfileActivity : AppCompatActivity() {
             }
             true
         }
+        binding.imageView12.visibility=View.INVISIBLE
+        binding.imageView13.visibility=View.INVISIBLE
+        binding.imageView14.visibility=View.VISIBLE
     }
 
     fun replaceFragmentM(fragment: Fragment){

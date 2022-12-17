@@ -6,16 +6,14 @@ import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.text.SpannableStringBuilder
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.activity.viewModels
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ictis.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import kotlin.system.exitProcess
@@ -42,6 +40,9 @@ class MainActivity : AppCompatActivity(){
             }
             true
         }
+        binding.imageView12.visibility=View.VISIBLE
+        binding.imageView13.visibility=View.INVISIBLE
+        binding.imageView14.visibility=View.INVISIBLE
     }
 
    fun replaceFragmentB(fragment: Fragment){

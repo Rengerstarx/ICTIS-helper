@@ -34,6 +34,9 @@ class MapActivity:AppCompatActivity() {
             }
             true
         }
+        binding.imageView12.visibility=View.INVISIBLE
+        binding.imageView13.visibility=View.VISIBLE
+        binding.imageView14.visibility=View.INVISIBLE
     }
     fun replaceFragmentM(fragment: Fragment){
         val fragmentManager = supportFragmentManager

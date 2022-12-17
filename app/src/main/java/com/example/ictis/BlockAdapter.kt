@@ -4,6 +4,7 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.cardview.widget.CardView
 import com.example.ictis.databinding.BlockBinding
 
 class BlockAdapter(val listener: Listener): RecyclerView.Adapter<BlockAdapter.BlockHolder>() {
@@ -14,7 +15,8 @@ class BlockAdapter(val listener: Listener): RecyclerView.Adapter<BlockAdapter.Bl
         val binding = BlockBinding.bind(item)
         fun bind(block: Blocks, listener: Listener) = with(binding){
             BlockName.text=block.title
-            BlockName.setOnClickListener{
+            imageView31.setImageResource(block.imageId)
+            carder.setOnClickListener{
                 listener.onClick(block)
             }
 
@@ -45,7 +47,7 @@ class BlockAdapter(val listener: Listener): RecyclerView.Adapter<BlockAdapter.Bl
             l += 1
         }
         if(marker)
-            BlockList.add(Blocks(BlockList.size,blok.title))
+            BlockList.add(Blocks(BlockList.size,blok.title, blok.imageId))
         notifyDataSetChanged()
     }
 

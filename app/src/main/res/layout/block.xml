@@ -6,6 +6,7 @@
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/carder"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -26,18 +27,31 @@
             android:layout_height="match_parent"
             android:backgroundTint="#00FFFFFF"
             android:scaleType="fitXY"
-            app:srcCompat="@drawable/some_id" />
+            app:srcCompat="@drawable/blockbase" />
 
-        <TextView
-            android:id="@+id/BlockName"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:backgroundTint="#00FFFFFF"
-            android:fontFamily="@font/philosopher_bold"
-            android:text="TextView"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/BlockName"
+                android:fontFamily="@font/philosopher_bold"
+                android:layout_width="0dp"
+                android:paddingLeft="10dp"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView" />
+
+            <ImageView
+                android:id="@+id/imageView31"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/fellow" />
+        </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
