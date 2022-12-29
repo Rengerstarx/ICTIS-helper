@@ -34,19 +34,17 @@
         android:id="@+id/constraintLayout2"
         android:layout_width="0dp"
         android:layout_height="52dp"
-        android:background="@color/greyBase"
+        android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
             android:id="@+id/backBut"
-            android:layout_width="43dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:background="#00FFFFFF"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:background="#FFFFFF"
             android:onClick="back"
             android:scaleType="fitXY"
             android:src="@drawable/nazad"
@@ -58,17 +56,20 @@
         <TextView
             android:id="@+id/textBlock"
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="18dp"
-            android:fontFamily="@font/philosopher_bold"
-            android:text="Стипендия"
-            android:textAlignment="textStart"
-            android:textColor="#1CAB6B"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/philosopher"
+            android:gravity="center"
+            android:text="Стипендии"
+            android:textColor="#000000"
             android:textSize="26sp"
             app:layout_constraintBottom_toBottomOf="@+id/backBut"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.289"
             app:layout_constraintStart_toEndOf="@+id/backBut"
-            app:layout_constraintTop_toTopOf="@+id/backBut" />
+            app:layout_constraintTop_toTopOf="@+id/backBut"
+            app:layout_constraintVertical_bias="0.755" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -36,9 +36,9 @@ class InfoBlock : Fragment(), BlockAdapter.Listener, ArticlePoiskAdapter.Listene
     private lateinit var auth: FirebaseAuth
     private val dataModel:DataModel by activityViewModels()
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_info_block, container, false)
         auth = Firebase.auth
         Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Имя").get().addOnSuccessListener {

@@ -14,8 +14,8 @@ class ArticlePoiskAdapter(val listener: Listener): RecyclerView.Adapter<ArticleP
     class ArticlePoiskAdapterHolder(item: View): RecyclerView.ViewHolder(item) {
         val binding = ArticlefoundBinding.bind(item)
         fun bind(articleFound: ArticleFound, listener: Listener) = with(binding){
-            NameOfArtic.text=articleFound.title
-            NameOfArtic.setOnClickListener{
+            StatyaName.text=articleFound.title
+            StatyaName.setOnClickListener{
                 listener.onClickR(articleFound)
             }
         }

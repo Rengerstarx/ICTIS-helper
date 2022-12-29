@@ -20,19 +20,16 @@ class Profile : Fragment() {
         val view = inflater.inflate(R.layout.fragment_profile, container, false)
         auth = Firebase.auth
         Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Имя").get().addOnSuccessListener {
-            view.findViewById<TextView>(R.id.textView12).text=it.value.toString()
+            view.findViewById<TextView>(R.id.textView14).text=it.value.toString()
         }
         Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Фамиля").get().addOnSuccessListener {
             view.findViewById<TextView>(R.id.textView13).text=it.value.toString()
         }
         Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Отчество").get().addOnSuccessListener {
-            view.findViewById<TextView>(R.id.textView14).text=it.value.toString()
-        }
-        Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Курс").get().addOnSuccessListener {
             view.findViewById<TextView>(R.id.textView15).text=it.value.toString()
         }
         Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Группа").get().addOnSuccessListener {
-            view.findViewById<TextView>(R.id.textView16).text=it.value.toString()
+            view.findViewById<TextView>(R.id.textView12).text="Группа ${it.value.toString()}"
         }
         return view
     }

@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/fon_new"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ArticleView">
@@ -10,7 +11,7 @@
         android:id="@+id/frameLayout"
         android:layout_width="0dp"
         android:layout_height="54dp"
-        android:background="@color/greyBase"
+        android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -25,6 +26,7 @@
             android:background="#00FFFFFF"
             android:onClick="back"
             android:scaleType="fitXY"
+            android:backgroundTint="#00000000"
             android:src="@drawable/nazad"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -40,7 +42,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="#1CAB6B" />
+            app:tint="@color/black" />
 
         <ImageButton
             android:id="@+id/MuteButton"
@@ -52,12 +54,12 @@
             app:layout_constraintEnd_toStartOf="@+id/VoiceButton"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
-            app:tint="#1CAB6B" />
+            app:tint="@color/black" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-
     <ScrollView
+        android:id="@+id/scrollView3"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -68,108 +70,150 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/TextStat"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/philosopher"
-                android:text=""
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="Права и обязанности проживающего в институте"
                 android:textAlignment="center"
-                android:textColor="#1CAB6B"
+                android:textColor="@color/black"
+                android:textDirection="firstStrongRtl"
                 android:textSize="25sp" />
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="match_parent"
+                android:layout_height="21dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:src="@drawable/line_for_article_view"
+                app:tint="@color/black" />
 
             <TextView
                 android:id="@+id/textView1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:fontFamily="@font/philosopher"
+                android:fontFamily="@font/philosopher_bold"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
                 android:text=""
                 android:textAlignment="textStart"
-                android:textColor="#335153"
-                android:textSize="16sp" />
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:fontFamily="@font/philosopher"
+                android:fontFamily="@font/philosopher_bold"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
                 android:text=""
-                android:textColor="#335153"
+                android:textColor="#000000"
                 android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:fontFamily="@font/philosopher"
+                android:fontFamily="@font/philosopher_bold"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
                 android:text=""
-                android:textColor="#335153"
-                android:textSize="16sp" />
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:fontFamily="@font/philosopher"
+                android:fontFamily="@font/philosopher_bold"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
                 android:text=""
-                android:textColor="#335153"
-                android:textSize="16sp" />
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:fontFamily="@font/philosopher"
+                android:fontFamily="@font/philosopher_bold"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
                 android:text=""
-                android:textColor="#335153"
-                android:textSize="16sp" />
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:fontFamily="@font/philosopher"
+                android:fontFamily="@font/philosopher_bold"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
                 android:text=""
-                android:textColor="#335153"
-                android:textSize="16sp" />
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView7"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:fontFamily="@font/philosopher"
+                android:fontFamily="@font/philosopher_bold"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
                 android:text=""
-                android:textColor="#335153"
-                android:textSize="16sp" />
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView8"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:fontFamily="@font/philosopher"
+                android:fontFamily="@font/philosopher_bold"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
                 android:text=""
-                android:textColor="#335153"
-                android:textSize="16sp" />
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView9"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:fontFamily="@font/philosopher"
+                android:fontFamily="@font/philosopher_bold"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
                 android:text=""
-                android:textColor="#335153"
-                android:textSize="16sp" />
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView10"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:fontFamily="@font/philosopher"
+                android:fontFamily="@font/philosopher_bold"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
                 android:text=""
-                android:textColor="#335153"
-                android:textSize="16sp" />
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

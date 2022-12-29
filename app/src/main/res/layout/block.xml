@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="20dp">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/carder"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="3dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         app:cardBackgroundColor="#00FFFFFF"
         app:cardCornerRadius="0dp"
@@ -36,14 +36,16 @@
 
             <TextView
                 android:id="@+id/BlockName"
-                android:fontFamily="@font/philosopher_bold"
                 android:layout_width="0dp"
-                android:paddingLeft="10dp"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:fontFamily="@font/philosopher_bold"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="TextView"
+                android:textSize="14sp"
+                android:textColor="@color/black"/>
 
             <ImageView
                 android:id="@+id/imageView31"
