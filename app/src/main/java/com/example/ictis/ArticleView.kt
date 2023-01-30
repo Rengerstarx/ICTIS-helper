@@ -11,6 +11,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.LifecycleOwner
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import java.util.*
@@ -21,17 +23,20 @@ class ArticleView : Fragment(), TextToSpeech.OnInitListener {
     private var stat=""
     private var tts: TextToSpeech? = null
     private var locale: Locale = Locale("RU")
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         tts = TextToSpeech(activity, this)
+        auth = Firebase.auth
         val view = inflater.inflate(R.layout.fragment_article_view, container, false)
         var l=""
         dataModel.message.observe(activity as LifecycleOwner) {
             l=it
         }
+        var K=l
         Firebase.database.getReference("Article").child("Stati").child("s"+l).child("name").get().addOnSuccessListener {
             view.findViewById<TextView>(R.id.TextStat).text=it.value.toString()
         }
@@ -57,8 +62,24 @@ class ArticleView : Fragment(), TextToSpeech.OnInitListener {
                 dataModel.message.value=it.value.toString()
             }
         }
+        Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Избраное").child("${K}").get().addOnSuccessListener {
+            if(it.value.toString()=="1")
+                view.findViewById<ImageButton>(R.id.like)!!.setImageResource(R.drawable.fullhear)
+        }
         view.findViewById<ImageButton>(R.id.VoiceButton)!!.setOnClickListener { speakOut() }
         view.findViewById<ImageButton>(R.id.MuteButton)!!.setOnClickListener { speakOff() }
+        view.findViewById<ImageButton>(R.id.like)!!.setOnClickListener {
+            var pic = view.findViewById<ImageButton>(R.id.like)
+            Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Избраное").child("${K}").get().addOnSuccessListener {
+                if(it.value.toString()=="1") {
+                    pic.setImageResource(R.drawable.heart)
+                    Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Избраное").child("${K}").setValue(0)
+                }else{
+                    pic.setImageResource(R.drawable.fullhear)
+                    Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Избраное").child("${K}").setValue(1)
+                }
+            }
+        }
         return view
     }
 

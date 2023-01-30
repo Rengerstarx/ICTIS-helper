@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.Spinner
 import android.widget.Toast
@@ -11,12 +12,19 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import org.jsoup.Jsoup
 
 class SecondRegister : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
+    var url="https://ictis.sfedu.ru/schedule"
+    val data = arrayOf("КТбо2-7", "КТбо2-8", "КТбо2-9", "КТбо2-10")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second_register)
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, data)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        val spinner = findViewById<Spinner>(R.id.spinner)
+        spinner.adapter = adapter
         auth = Firebase.auth
     }
 
