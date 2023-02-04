@@ -38,6 +38,8 @@ class SecondRegister : AppCompatActivity() {
             Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Отчество").setValue(s3)
             Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Курс").setValue(findViewById<Spinner>(R.id.spinner2).selectedItem.toString())
             Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Группа").setValue(findViewById<Spinner>(R.id.spinner).selectedItem.toString())
+            Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("CountZ").setValue(0)
+            Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Заметки").child("CountZ2").setValue(0)
             startActivity(Intent(this, MainActivity::class.java))
         }else{
             val toast = Toast.makeText(applicationContext, "Не все поля заполненны", Toast.LENGTH_SHORT)
