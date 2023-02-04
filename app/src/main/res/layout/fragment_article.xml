@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fon_new"
+    android:screenOrientation="portrait"
     tools:context=".ArticleList">
 
     <androidx.recyclerview.widget.RecyclerView
