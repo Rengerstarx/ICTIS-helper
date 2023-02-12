@@ -51,4 +51,8 @@ class ProfileActivity : AppCompatActivity() {
         fragmentTransaction.replace(R.id.BAZA,fragment)
         fragmentTransaction.commit()
     }
+
+    fun back(view: View){
+        replaceFragmentP(Profile())
+    }
 }

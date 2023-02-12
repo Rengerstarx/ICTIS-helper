@@ -28,6 +28,7 @@ class Zametki : Fragment(), ZametkiAdapter.Listener {
         auth = Firebase.auth
         view.findViewById<RecyclerView>(R.id.rcView2).layoutManager = LinearLayoutManager(context)
         view.findViewById<RecyclerView>(R.id.rcView2).adapter=adapter
+        adapter.deleter()
         Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("CountZ").get().addOnSuccessListener {
             var t=it.value.toString().toInt()
             var h=1

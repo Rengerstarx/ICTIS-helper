@@ -32,16 +32,18 @@ class ZametkiView : Fragment() {
         val view = inflater.inflate(R.layout.fragment_zametki_view, container, false)
         tx1=view.findViewById(R.id.textBlock)
         tx2=view.findViewById(R.id.textView11)
+        var pic = view.findViewById<ImageButton>(R.id.backBut2)
+        pic.setImageResource(R.drawable.redach)
         tx1?.isEnabled = false
         tx2?.isEnabled = false
         var l=""
-        dataModel.message.observe(activity as LifecycleOwner) {
-            l=it
-        }
+        dataModel.message.observe(activity as LifecycleOwner) { l=it }
         auth = Firebase.auth
         if(l=="$"){
             tx1?.text= SpannableStringBuilder("")
             tx2?.text= SpannableStringBuilder("")
+            var pic = view.findViewById<ImageButton>(R.id.backBut2)
+            pic.setImageResource(R.drawable.addartic)
             tx1?.isEnabled = true
             tx2?.isEnabled = true
         }
@@ -55,25 +57,32 @@ class ZametkiView : Fragment() {
         }
         view.findViewById<ImageButton>(R.id.backBut2).setOnClickListener {
             if(tx1?.isEnabled == false){
+                var pic = view.findViewById<ImageButton>(R.id.backBut2)
+                pic.setImageResource(R.drawable.addartic)
                 tx1?.isEnabled = true
                 tx2?.isEnabled = true
             }else {
+                var pic = view.findViewById<ImageButton>(R.id.backBut2)
+                pic.setImageResource(R.drawable.redach)
                 tx1?.isEnabled = false
                 tx2?.isEnabled = false
-                if (l != "$") {
-                    Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Заметки").child("s${l}").child("Название").setValue(tx1?.text.toString())
-                    Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Заметки").child("s${l}").child("Текст").setValue(tx2?.text.toString())
-                }else{
-                    Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Заметки").child("CountZ2").get().addOnSuccessListener {
-                        Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("CountZ").setValue(it.value.toString().toInt()+1)
-                        l=(it.value.toString().toInt()+1).toString()
+                if (tx1?.text.toString() == "" || tx2?.text.toString() == "") {}
+                else {
+                    if (l != "$") {
                         Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Заметки").child("s${l}").child("Название").setValue(tx1?.text.toString())
                         Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Заметки").child("s${l}").child("Текст").setValue(tx2?.text.toString())
+                    } else {
+                        Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Заметки").child("CountZ2").get().addOnSuccessListener {
+                            Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("CountZ").setValue(it.value.toString().toInt() + 1)
+                            l = (it.value.toString().toInt() + 1).toString()
+                            Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Заметки").child("s${l}").child("Название").setValue(tx1?.text.toString())
+                            Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Заметки").child("s${l}").child("Текст").setValue(tx2?.text.toString())
+                        }
+                        Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("CountZ").get().addOnSuccessListener {
+                            Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Заметки").child("CountZ2").setValue(it.value.toString().toInt() + 1)
+                            }
+                        Log.e("321", l)
                     }
-                    Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("CountZ").get().addOnSuccessListener {
-                        Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Заметки").child("CountZ2").setValue(it.value.toString().toInt()+1)
-                    }
-                    Log.e("321",l)
                 }
             }
         }

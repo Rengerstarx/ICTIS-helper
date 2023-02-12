@@ -44,7 +44,6 @@
             android:onClick="back"
             android:scaleType="fitXY"
             android:src="@drawable/nazad"
-            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

@@ -68,9 +68,13 @@
 
         <ImageView
             android:id="@+id/imageView20"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/white_polosa_dlya_poiska" />
+            android:src="@drawable/white_polosa_dlya_poiska"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/backBut5"
@@ -81,7 +85,6 @@
             android:onClick="back"
             android:scaleType="fitXY"
             android:src="@drawable/nazad"
-            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -102,10 +105,10 @@
             android:textSize="26sp"
             app:layout_constraintBottom_toBottomOf="@+id/backBut5"
             app:layout_constraintEnd_toStartOf="@+id/backBut2"
-            app:layout_constraintHorizontal_bias="0.289"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/backBut5"
             app:layout_constraintTop_toTopOf="@+id/backBut5"
-            app:layout_constraintVertical_bias="0.755" />
+            app:layout_constraintVertical_bias="0.907" />
 
         <ImageButton
             android:id="@+id/backBut2"

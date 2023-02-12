@@ -44,7 +44,6 @@
             android:onClick="back"
             android:scaleType="fitXY"
             android:src="@drawable/nazad"
-            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -63,10 +62,10 @@
             android:textSize="26sp"
             app:layout_constraintBottom_toBottomOf="@+id/backBut5"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.289"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/backBut5"
             app:layout_constraintTop_toTopOf="@+id/backBut5"
-            app:layout_constraintVertical_bias="0.755" />
+            app:layout_constraintVertical_bias="0.907" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

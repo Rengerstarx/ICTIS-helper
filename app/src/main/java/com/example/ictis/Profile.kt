@@ -49,6 +49,10 @@ class Profile : Fragment() {
             val fm = (getContext() as ProfileActivity).supportFragmentManager
             fm.beginTransaction().addToBackStack(null).replace(R.id.BAZA,Zametki()).commit()
         }
+        view.findViewById<ImageButton>(R.id.imageButton4).setOnClickListener {
+            val fm = (getContext() as ProfileActivity).supportFragmentManager
+            fm.beginTransaction().addToBackStack(null).replace(R.id.BAZA,ProfileRedach()).commit()
+        }
         return view
     }
 

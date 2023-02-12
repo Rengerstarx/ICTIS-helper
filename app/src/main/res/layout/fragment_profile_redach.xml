@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fon_new"
+    android:screenOrientation="portrait"
+    tools:context=".ProfileRedach">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView18"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/white_polosa_dlya_poiska"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/TextStat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/philosopher"
+            android:text="Редактирование профиля"
+            android:textColor="#000000"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <EditText
+        android:id="@+id/textView17"
+        android:layout_width="291dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="60dp"
+        android:background="#00000000"
+        android:fontFamily="@font/philosopher"
+        android:hint="Фамилия"
+        android:maxLines="1"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
+
+    <EditText
+        android:id="@+id/textView18"
+        android:layout_width="291dp"
+        android:layout_height="45dp"
+        android:hint="Имя"
+        android:background="#00000000"
+        android:text=""
+        android:textColor="@color/black"
+        android:fontFamily="@font/philosopher"
+        android:textSize="20sp"
+        android:maxLines="1"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+    <EditText
+        android:id="@+id/textView19"
+        android:layout_width="291dp"
+        android:layout_height="45dp"
+        android:hint="Отчество"
+        android:text=""
+        android:background="#00000000"
+        android:textColor="@color/black"
+        android:fontFamily="@font/philosopher"
+        android:textSize="20sp"
+        android:maxLines="1"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="291dp"
+        android:layout_height="45dp"
+        android:entries="@array/группы"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner2" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="291dp"
+        android:layout_height="45dp"
+
+        android:entries="@array/курсы"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView19"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:text="Сохранить"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
