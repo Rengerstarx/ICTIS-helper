@@ -15,10 +15,10 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
-class Izbranoy : Fragment(), ArticleAdapter.Listener{
+class Izbranoy : Fragment(), IzbranoyAdapter.Listener{
 
     private val dataModel:DataModel by activityViewModels()
-    val adapter=ArticleAdapter(this)
+    val adapter=IzbranoyAdapter(this)
     private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
@@ -54,5 +54,12 @@ class Izbranoy : Fragment(), ArticleAdapter.Listener{
         dataModel.message.value=artic.number.toString()
         val fm = (getContext() as ProfileActivity).supportFragmentManager
         fm.beginTransaction().addToBackStack(null).replace(R.id.BAZA,ArticleView()).commit()
+    }
+
+    override fun onSvayp(artic: Article) {
+        Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString())
+            .child("Избраное").child("${artic.number}").setValue(0)
+        adapter.deler(artic._id)
+
     }
 }

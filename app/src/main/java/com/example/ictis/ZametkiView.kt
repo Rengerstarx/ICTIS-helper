@@ -71,12 +71,14 @@ class ZametkiView : Fragment() {
                     if (l != "$") {
                         Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Заметки").child("s${l}").child("Название").setValue(tx1?.text.toString())
                         Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Заметки").child("s${l}").child("Текст").setValue(tx2?.text.toString())
+                        Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Заметки").child("s${l}").child("Активность").setValue(1)
                     } else {
                         Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Заметки").child("CountZ2").get().addOnSuccessListener {
                             Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("CountZ").setValue(it.value.toString().toInt() + 1)
                             l = (it.value.toString().toInt() + 1).toString()
                             Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Заметки").child("s${l}").child("Название").setValue(tx1?.text.toString())
                             Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Заметки").child("s${l}").child("Текст").setValue(tx2?.text.toString())
+                            Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Заметки").child("s${l}").child("Активность").setValue(1)
                         }
                         Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("CountZ").get().addOnSuccessListener {
                             Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Заметки").child("CountZ2").setValue(it.value.toString().toInt() + 1)

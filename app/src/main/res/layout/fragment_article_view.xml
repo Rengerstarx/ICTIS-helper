@@ -96,7 +96,6 @@
                 android:fontFamily="@font/philosopher"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
-                android:text="Права и обязанности проживающего в институте"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textDirection="firstStrongRtl"

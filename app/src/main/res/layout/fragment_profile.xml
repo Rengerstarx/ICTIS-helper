@@ -118,7 +118,6 @@
                 android:fontFamily="@font/philosopher"
                 android:maxLines="1"
                 android:paddingLeft="10sp"
-                android:text="TextView"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
@@ -129,7 +128,6 @@
                 android:fontFamily="@font/philosopher"
                 android:maxLines="1"
                 android:paddingLeft="10sp"
-                android:text="TextView"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
@@ -140,7 +138,6 @@
                 android:fontFamily="@font/philosopher"
                 android:maxLines="1"
                 android:paddingLeft="10sp"
-                android:text="TextView"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
         </LinearLayout>
