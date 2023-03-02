@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
+import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.GridLayoutManager
@@ -62,12 +63,12 @@ class Zametki : Fragment(), ZametkiAdapter.Listener {
         view.findViewById<Button>(R.id.button6).setOnClickListener {
             Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Заметки").child("s${numer}").child("Активность").setValue(0)
             adapter.deler(numer)
-            view.findViewById<ConstraintLayout>(R.id.reshenie).visibility=View.GONE
+            view.findViewById<CardView>(R.id.reshenie).visibility=View.GONE
             view.findViewById<ImageView>(R.id.imageView22).visibility=View.GONE
             view?.findViewById<RecyclerView>(R.id.rcView2)?.isEnabled=true
         }
         view.findViewById<Button>(R.id.button7).setOnClickListener {
-            view.findViewById<ConstraintLayout>(R.id.reshenie).visibility=View.GONE
+            view.findViewById<CardView>(R.id.reshenie).visibility=View.GONE
             view.findViewById<ImageView>(R.id.imageView22).visibility=View.GONE
             view?.findViewById<RecyclerView>(R.id.rcView2)?.isEnabled=true
         }
@@ -83,7 +84,7 @@ class Zametki : Fragment(), ZametkiAdapter.Listener {
 
     override fun onLong(zam: ZamOne) {
         numer=zam._id
-        view?.findViewById<ConstraintLayout>(R.id.reshenie)?.visibility=View.VISIBLE
+        view?.findViewById<CardView>(R.id.reshenie)?.visibility=View.VISIBLE
         view?.findViewById<ImageView>(R.id.imageView22)?.visibility=View.VISIBLE
         view?.findViewById<RecyclerView>(R.id.rcView2)?.isEnabled=false
     }

@@ -24,19 +24,19 @@ class ProfileRedach : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_profile_redach, container, false)
         auth = Firebase.auth
-        val tx1=view.findViewById<EditText>(R.id.textView17)
-        val tx2=view.findViewById<EditText>(R.id.textView18)
-        val tx3=view.findViewById<EditText>(R.id.textView19)
+        val tx1=view.findViewById<EditText>(R.id.editTextSurname)
+        val tx2=view.findViewById<EditText>(R.id.editTextName)
+        val tx3=view.findViewById<EditText>(R.id.editTextOtchestvo)
         Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Имя").get().addOnSuccessListener {
-            view.findViewById<EditText>(R.id.textView17).text= SpannableStringBuilder(it.value.toString())
+            view.findViewById<EditText>(R.id.editTextSurname).text= SpannableStringBuilder(it.value.toString())
         }
         Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Фамиля").get().addOnSuccessListener {
-            view.findViewById<EditText>(R.id.textView18).text=SpannableStringBuilder(it.value.toString())
+            view.findViewById<EditText>(R.id.editTextName).text=SpannableStringBuilder(it.value.toString())
         }
         Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Отчество").get().addOnSuccessListener {
-            view.findViewById<EditText>(R.id.textView19).text=SpannableStringBuilder(it.value.toString())
+            view.findViewById<EditText>(R.id.editTextOtchestvo).text=SpannableStringBuilder(it.value.toString())
         }
-        view.findViewById<Button>(R.id.button5).setOnClickListener {
+        view.findViewById<TextView>(R.id.textView16).setOnClickListener {
             Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Имя").setValue(tx1.text.toString())
             Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Фамиля").setValue(tx2.text.toString())
             Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Отчество").setValue(tx3.text.toString())
