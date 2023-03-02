@@ -55,4 +55,8 @@ class ProfileActivity : AppCompatActivity() {
     fun back(view: View){
         replaceFragmentP(Profile())
     }
+
+    fun singer(view: View){
+        startActivity(Intent(this, SignIn::class.java))
+    }
 }

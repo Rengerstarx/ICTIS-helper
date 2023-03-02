@@ -141,6 +141,18 @@
                 android:textColor="@color/black"
                 android:textSize="20sp" />
         </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="45dp"
+            android:onClick="singer"
+            android:layout_height="0dp"
+            android:background="#00FFFFFF"
+            android:scaleType="fitXY"
+            android:src="@android:drawable/ic_menu_my_calendar"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintEnd_toStartOf="@+id/imageButton4"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout

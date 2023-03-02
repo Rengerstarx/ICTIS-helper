@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
@@ -77,6 +78,9 @@ class SignIn : AppCompatActivity() {
             SignInGoogle()
         }
         checkautorization()
+        findViewById<ImageButton>(R.id.guest).setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
     }
     private fun LogInWithEmailPassword(){
         //вход по логину и паролю

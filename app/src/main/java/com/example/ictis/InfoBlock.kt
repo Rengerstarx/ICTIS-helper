@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -41,9 +42,13 @@ class InfoBlock : Fragment(), BlockAdapter.Listener, ArticlePoiskAdapter.Listene
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_info_block, container, false)
         auth = Firebase.auth
-        Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Имя").get().addOnSuccessListener {
-            var m="Привет, "+it.value.toString()+"\n"+"Добро пожаловать в ICTIS helper"
-            view.findViewById<TextView>(R.id.textView).text=m
+        if(auth.currentUser==null){
+            view.findViewById<TextView>(R.id.textView).text="Привет, Гость\nДобро пожаловать в ICTIS helper"
+        }else{
+            Firebase.database.getReference("Users").child(auth.currentUser?.uid.toString()).child("Имя").get().addOnSuccessListener {
+                var m="Привет, "+it.value.toString()+"\n"+"Добро пожаловать в ICTIS helper"
+                view.findViewById<TextView>(R.id.textView).text=m
+            }
         }
         view.findViewById<RecyclerView>(R.id.rcView).layoutManager = GridLayoutManager(context,2)
         view.findViewById<RecyclerView>(R.id.rcView).adapter=adapter

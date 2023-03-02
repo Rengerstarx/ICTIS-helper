@@ -174,4 +174,14 @@
         app:layout_constraintTop_toTopOf="@+id/GoogleSignInButton"
         app:srcCompat="@drawable/googlogo" />
 
+    <ImageButton
+        android:id="@+id/guest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:srcCompat="@drawable/common_full_open_on_phone" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
