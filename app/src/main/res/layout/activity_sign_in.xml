@@ -124,6 +124,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LogInButton" />
 
+    <TextView
+        android:id="@+id/sign_guest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="66dp"
+        android:background="@drawable/rectangle_to_sign_in_guest"
+        android:fontFamily="@font/philosopher"
+        android:gravity="center"
+        android:text="Войти без регистрации"
+        android:textColor="#020000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginrnowbutton" />
+
     <ImageView
 
         android:id="@+id/GoogleSignInButton"
